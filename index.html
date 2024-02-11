@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car Shop App</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header> 
+		<nav>
+		<div class="logo">   
+				<img src="photos/Black Minimalist Luxury Car Automotive Logo.png"
+				alt="This is a logo photo">
+		</div>
+		<h1>Auto Shop</h1>
+		<p class="subtitle">Luxury Car Shop</p>
+		</nav>
+	</header>
+	<main>
+		
+	
+		<section id="filters">
+			<h2>Filters</h2>
+			<label for="make-filter">Make:</label>
+			<select id="make-filter">
+                <option value="all">All</option>
+				<option value="audi">Audi</option>
+				<option value="bmw">BMW</option>
+				<option value="mercedes-benz">Mercedes-Benz</option>
+				<option value="volkswagen">Volkswagen</option>
+				<option value="range-rover">Range-Rover</option> 
+				
+				
+			</select>
+			
+			<label for="price-filter">Price Range:</label>
+			<input type="number" id="price-filter-min" placeholder="Min">
+			<input type="number" id="price-filter-max" placeholder="Max">
+			<a href="#cars" id="search-button">Search</a>
+		</section>
+		<section id="cars">
+			<h2>Cars</h2>
+			<ul id="car-list">
+				
+                <span data-make="audi" data-price="140000">
+                    <img src="photos/A8-1.jpg" alt="Car image" class="car-image">
+                    <div class="car-info">
+                      <h3>Audi A8</h3>
+                      <p>Price: $140,000</p>
+                      <button class="add-to-cart" data-id="audi-a8">Add to Cart</button>
+					  
+                    </div>
+                    </div>
+					</span>
+                  
+				   <span data-make="bmw" data-price="100000">
+                    <img src="photos/bmw-7.jpg" alt="Car image" class="car-image">
+                    <div class="car-info">
+                      <h3>BMW 760i </h3>
+                      <p>Price: $100,000</p>
+                      <button class="add-to-cart" data-id="bmw-760i">Add to Cart</button>
+					  
+                    </div>
+                    </div>
+				   </span>
+                  
+				   <span data-make="mercedes-benz" data-price="500000">
+				  <img src="photos/G800.webp" alt="Car image" class="car-image">
+                    <div class="car-info">
+                      <h3>Mercedes-Benz G800</h3>
+                      <p>Price: $500,000</p>
+                      <button class="add-to-cart" data-id="mercedes-benz-g800">Add to Cart</button>
+					  
+                    </div>
+                    </div>
+				   </span>
+                  
+				   <span data-make="volkswagen" data-price="60000">
+				  <img src="photos/golf8-1.webp" alt="Car image" class="car-image">
+                    <div class="car-info">
+                      <h3>Volkswagen Golf VIII</h3>
+                      <p>Price: $60,000</p>
+                      <button class="add-to-cart" data-id="volksvagen-golf-viii">Add to Cart</button>
+					 
+                    </div>
+                    </div>
+				   </span>
+				   <span data-make="range-rover" data-price="100000">
+				  <img src="photos/range-rover.jpeg" alt="Car image" class="car-image">
+                    <div class="car-info">
+                      <h3>Range Rover</h3>
+                      <p>Price: $100,000</p>
+                      <button class="add-to-cart" data-id="range-rover">Add to Cart</button>
+					  
+                    </div>
+                    </div>
+				   </span>
+				   <span data-make="audi" data-price="130000">
+				  <img src="photos/audi-rs6.webp" alt="Car image" class="car-image">
+                    <div class="car-info">
+                      <h3>Audi RS6</h3>
+                      <p>Price: $130,000</p>
+                      <button class="add-to-cart" data-id="audi-rs6">Add to Cart</button>
+					 
+                    </div>
+                    </div>
+				   </span>
+				<!-- Cars will be dynamically generated here -->
+			</ul>
+		</section>
+	
+		<div id="cart-list">
+			<div style="display: flex;">
+				<button  style="display: none;" class="remove-from-cart">X</button>
+			</div>
+		</div>
+
+		<div class="checkout-wrapper">
+			<p id="total">Total: $0</p>
+			<a style="text-decoration: none;" href="#cart" id="checkout">Checkout</a>
+			<button id="sale" style="display:none;">Sale</button>
+		</div>
+
+		<section id="add-car">
+			<h2>Add a New Car</h2>
+			<form id="car-form">
+				<label for="make-input">Type</label>
+				<input type="text" id="make-input" required>
+				<label for="model-input">Model</label>
+				<input type="text" id="model-input" required>
+				<label for="price-input">Price</label>
+				<input type="number" id="price-input" required>
+				<label for="image-input">Image</label>
+			     <input type="file" id="image-input" accept="image/*" required>
+				<button id="add-car-button" type="button">Add Car</button>
+			</form>
+		</section>
+
+	
+
+		<section id="cart">
+			<h2>Shopping Cart</h2>
+			<section id="checkout">
+				<h2>Checkout</h2>
+				<form id="checkout-form">
+					<label for="card-holder-name">Card Holder Name:</label>
+					<input type="text" id="card-holder-name" name="card-holder-name" required>
+
+					<label for="card-number">Card Number:</label>
+					<input type="text" id="card-number" name="card-number" required>
+					
+					<label for="card-expiry">Expiry Date:</label>
+					<input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY" required>
+					
+					<label for="card-cvc">CVC:</label>
+					<input type="text" id="card-cvc" name="card-cvc" required>
+					
+					<button type="click" id="pay-button">Pay Now</button>
+				</form>
+				<p id="checkout-message"></p>
+			</section>
+	
+		</section>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="script.js"></script>
+	
+</body>
+</html>
+<footer>
+	<div class="container">
+		<div class="footer-content">
+			<div class="footer-column">
+				<h3>Visit our showroom</h3>
+				
+			</div>
+			<div class="footer-column">
+			<h3>Contact</h3>
+			<p>123 Main Str. <br> Pristina Kosovo 12345 <br> Email:info@autoshop.com <br> Phone: 555-456-7865</p>
+			</div>
+			<div class="footer-column">
+				<img src="photos/Black Minimalist Luxury Car Automotive Logo.png" alt="Logo" class="footer-logo">
+				<h3>Follow Us</h3>
+				<div class="social-media-icons">
+					<a href="https://www.facebook.com"><i class="fab fa-feacebook"></i></a>
+					<a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+					<a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</footer>
